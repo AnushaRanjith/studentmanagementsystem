@@ -59,8 +59,8 @@ class AdminDashboard(APIView):
 class OfficeStaffDashboard(APIView):
 
     def get(self, request):
-        students = Student.objects.all()
-        students_serializer = StudentSerializer(students, many=True)
+        students = FeesHistory.objects.all()
+        students_serializer = FeesHistorySerializer(students, many=True)
         return Response(students_serializer.data)
 
 class LibrarianDashboard(APIView):
